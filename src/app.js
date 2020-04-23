@@ -4,6 +4,7 @@ const path = require("path");
 const hbs = require("hbs");
 const forecast = require("./utils/forecast");
 const geocode = require("./utils/geocode");
+const PORT = process.env.PORT || 3000;
 
 const viewsPath = path.join(__dirname, "../Templates/views");
 const publicDirectoryPath = path.join(__dirname, "../public");
@@ -81,6 +82,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("server is up now");
+app.listen(PORT, () => {
+  console.log("server is up on port " + PORT);
 });
